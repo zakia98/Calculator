@@ -1,6 +1,7 @@
 body {
     display:flex;
     flex-direction:column;
+
 }
 
 .calculator {
@@ -8,9 +9,13 @@ body {
     display:flex;
     padding:50px;
     border-radius:20px;
-    margin:30%;
+    margin:10%;
     flex-direction:column;
-    flex:1 1 auto
+    flex:1 1 auto;
+    width:40%;
+    height:40%;
+    justify-self:center;
+    align-self:center;
 }
 
 #display {
@@ -34,11 +39,16 @@ body {
 .buttons-bottom {
     display:flex;
     flex-direction:row;
-    justify-content:space-between
+    justify-content:space-between;
 }
 
-.operators {
+#operators {
     display:flex;
     flex-direction:row;
+    font-size: 200px;
 }
 
+button {
+    padding:10px;
+    font-size:20px
+}

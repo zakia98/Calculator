@@ -30,7 +30,7 @@ function operate(num1, num2, operator) {
             break;
     }
 }
-function compute() {
+function input() {
     if (operatorClicked[0] == false) {
         num1 += this.textContent 
         display.textContent = num1  
@@ -39,26 +39,36 @@ function compute() {
         num2 += this.textContent
         display.textContent = num2
     }
-
-    
-       
 }
 
 let num1 =''
 let num2 =''
 
 const numberButtons = document.querySelectorAll('#button')
-numberButtons.forEach(button => 
-    button.addEventListener('click', compute
+numberButtons.forEach(numberButton => 
+    numberButton.addEventListener('click', input
 ))
 
-const operatorClicked = [false]
+const operatorClicked = [false, '']
 
-const operatorButtons = document.querySelectorAll('.operators > *')
+const operatorButtons = document.querySelectorAll('#operator')
 operatorButtons.forEach(operatorButton => operatorButton
     .addEventListener('click', () => {
-        operatorClicked[0, 1] = [true, operatorButton.textContent]
+        operatorClicked[0] = true 
+        operatorClicked[1] = operatorButton.textContent.toString()
         display.textContent = ""
     }))
         
-const clearButton = document.querySelectorAll()
+const clearButton = document.querySelector('#clear')
+clearButton.addEventListener('click', () => {
+    num1 = '';
+    num2 = '';
+    display.textContent = ''
+    operatorClicked[0] = false;
+    operatorClicked[1] = ''
+})
+
+const equalsButton = document.querySelector('#equals');
+equalsButton.addEventListener('click', () => {
+    display.textContent = operate(num1, num2, operatorClicked[1])
+})

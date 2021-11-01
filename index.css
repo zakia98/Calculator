@@ -13,7 +13,7 @@ body {
     flex:1 1 auto
 }
 
-.display {
+#display {
     background-color:rgb(200, 219, 200);
     height:30px;
     margin-bottom:10px;
@@ -39,5 +39,6 @@ body {
 
 .operators {
     display:flex;
-    flex-direction:row
+    flex-direction:row;
 }
+

@@ -30,13 +30,35 @@ function operate(num1, num2, operator) {
             break;
     }
 }
-function computer() {
-    let num1 = '0'
-    num1 + this.textContent
-    console.log(num1) 
+function compute() {
+    if (operatorClicked[0] == false) {
+        num1 += this.textContent 
+        display.textContent = num1  
+    }
+    if (operatorClicked[0] == true) {
+        num2 += this.textContent
+        display.textContent = num2
+    }
+
+    
+       
 }
+
+let num1 =''
+let num2 =''
 
 const numberButtons = document.querySelectorAll('#button')
 numberButtons.forEach(button => 
-    button.addEventListener('click', computer
+    button.addEventListener('click', compute
 ))
+
+const operatorClicked = [false]
+
+const operatorButtons = document.querySelectorAll('.operators > *')
+operatorButtons.forEach(operatorButton => operatorButton
+    .addEventListener('click', () => {
+        operatorClicked[0, 1] = [true, operatorButton.textContent]
+        display.textContent = ""
+    }))
+        
+const clearButton = document.querySelectorAll()

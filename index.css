@@ -31,7 +31,7 @@ body {
     border-radius:20px;
 }
 
-.seperator {
+.display.seperator {
     height:50px;
     padding:1px;
     min-width:2rem;
@@ -39,6 +39,14 @@ body {
     display:flex;
     flex-direction:row;
     flex:1;
+    text-align: end;
+    padding:20px;
+    font-size:20px;
+}
+
+#display-second {
+    text-align: end;
+    display:inline;
 }
 
 .seperator > * {
@@ -81,5 +89,6 @@ button {
 }
 
 #display-first {
-    width:70%
+    width:70%;
+
 }

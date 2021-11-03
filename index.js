@@ -81,10 +81,13 @@ function operatorButton() {
 }
 
 function addDecimal() {
-    console.log('hi')
     if (!(num1.includes('.')) && (operatorClicked[0]==false)) {
         num1 += '.'
         displayNum1.textContent = num1
+    }
+    if (!(num2.includes('.')) && (operatorClicked[0]==true)) {
+        num2 += '.'
+        displayNum2.textContent = num2
     }
 }
 
@@ -127,4 +130,50 @@ backspaceButton.addEventListener('click', () => {
         num2 = num2.substring(0, num2.length - 1)
         displayNum2.textContent = num2
     }
+})
+
+document.addEventListener('keydown', (e) => {
+    if (operatorClicked[0] == false) {
+        if ((e.key < 10) || (e.key > -1)) {
+            num1 += e.key
+            displayNum1.textContent = num1  
+        }
+        if (e.key == 'Backspace') {
+            console.log('backspace')
+            num1 = num1.substring(0, num1.length - 1)
+            displayNum1.textContent = num1 
+        }
+        if (e.key == '.') {
+            if (!(num1.includes('.')) && (operatorClicked[0]==false)) {
+                num1 += '.'
+                displayNum1.textContent = num1
+            }
+            if (!(num2.includes('.')) && (operatorClicked[0]==true)) {
+                num2 += '.'
+                displayNum2.textContent = num2
+            }
+        }
+    }
+    if (operatorClicked[0] == true) {
+        if ((e.key < 47) || (e.key > 58)) {
+            num2 += e.key
+            displayNum2.textContent = num2 
+        }
+        if (e.key == 'Backspace') {
+            console.log('backspace')
+            num2 = num2.substring(0, num2.length - 1)
+            displayNum2.textContent = num2
+        }
+        if (e.key == '.') {
+            if (!(num1.includes('.')) && (operatorClicked[0]==false)) {
+                num1 += '.'
+                displayNum1.textContent = num1
+            }
+            if (!(num2.includes('.')) && (operatorClicked[0]==true)) {
+                num2 += '.'
+                displayNum2.textContent = num2
+            }
+        }
+    }
+
 })

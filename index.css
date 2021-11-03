@@ -1,22 +1,51 @@
 body {
     display:flex;
     flex-direction:column;
-
+    background-color: orchid;
+}
+header {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    font-size:48px;
+    border: solid 1px;
+    padding:20px
 }
 
 .calculator {
-    background-color: rgb(226, 214, 214);
+    background-color: rgb(230, 152, 240);
     display:flex;
     padding:10px;
     border-radius:20px;
     margin:10%;
     flex-direction:column;
     flex:1 1 auto;
-    width:70%;
+    width:40%;
     height:60%;
     justify-self:center;
     align-self:center;
 }
+
+
+button {
+    display:inline-block;
+    font-size:20px;
+    cursor:pointer;
+    outline:none;
+    background-color: rgb(206, 203, 255);
+    border-radius:10px;
+    width: 26%;
+    border:none;
+    margin-top:5px;
+    margin-left:3px;
+    transition: all 0.4s ease 0s
+}
+
+button:hover {
+    background-color: orangered ;
+}
+
+
 
 #display {
     background-color:rgb(200, 219, 200);
@@ -49,6 +78,7 @@ body {
     display:inline;
 }
 
+
 .seperator > * {
     padding:1px;
 }
@@ -62,23 +92,32 @@ body {
     display:flex;
     flex-direction:row
 }
-
+.buttons-top {
+    display:flex;
+    justify-content: space-between;
+}
 .buttons-bottom {
     display:flex;
     flex-direction:row;
-    justify-content:space-between;
+    justify-content: space-between;
+    flex:1;
 }
 
-#operators {
+.operators {
     display:flex;
-    flex-direction:column;
+    flex-direction:row-reverse;
+    flex-wrap:wrap;
     font-size: 200px;
+    margin-top:10px;
+
 }
 
-button {
-    padding:10px;
-    font-size:20px
+.operators > *{
+    width:47%;
+    margin-top:5px;
 }
+
+
 
 #display-operator {
     width:30%;
@@ -90,5 +129,9 @@ button {
 
 #display-first {
     width:70%;
+}
 
+.numbers {
+    width:50%;
+    margin-top:10px
 }
